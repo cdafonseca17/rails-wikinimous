@@ -3,6 +3,9 @@
 <% @articles.each do |article| %>
 <h2><%= link_to article.title.capitalize, article_path(article.id) %></h2>
 <h5><%= link_to 'Edit', article_edit_path(article.id) %></h5>
+<%= link_to 'Delete', article_path(article),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
 <p><%= article.content %></p>
 <% end %>
 
